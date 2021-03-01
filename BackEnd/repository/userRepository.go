@@ -2,11 +2,11 @@ package repository
 
 import (
 	"MekarTest/models"
-	"MekarTest/modules"
+	"MekarTest/config"
 )
 
 func FindAll() ([]*models.User, error){
-	conn, err := modules.Connect()
+	conn, err := config.Connect()
 	if err != nil {
 		return nil, err
 	}
@@ -17,7 +17,7 @@ func FindAll() ([]*models.User, error){
 }
 
 func FindById(id string) (*models.User, error) {
-	conn, err := modules.Connect()
+	conn, err := config.Connect()
 	if err != nil {
 		return nil, err
 	}
@@ -28,7 +28,7 @@ func FindById(id string) (*models.User, error) {
 }
 
 func Save(user models.User) (*models.User, error) {
-	conn, err := modules.Connect()
+	conn, err := config.Connect()
 	if err != nil {
 		return nil, err
 	}
@@ -38,7 +38,7 @@ func Save(user models.User) (*models.User, error) {
 }
 
 func Update(user models.User) error {
-	conn, err := modules.Connect()
+	conn, err := config.Connect()
 	if err != nil {
 		return err
 	}
@@ -50,7 +50,7 @@ func Update(user models.User) error {
 }
 
 func Delete(id string) error {
-	conn, err := modules.Connect()
+	conn, err := config.Connect()
 	if err != nil {
 		return err
 	}

@@ -3,12 +3,12 @@ package main
 import (
 	"MekarTest/controllers"
 	"MekarTest/models"
-	"MekarTest/modules"
+	"MekarTest/config"
 	"log"
 )
 
 func main()  {
-	db, err := modules.Connect()
+	db, err := config.Connect()
 	if err != nil {
 		log.Println("Connection Failed!")
 		panic("failed")
