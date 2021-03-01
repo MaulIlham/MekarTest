@@ -1,0 +1,16 @@
+const SAVE_DATA = 1;
+const DELETE_DATA = 2;
+const SEARCH_DATA = 3;
+const DETAIL_DATA = 4;
+const FETCH_COMPLETE = 5;
+const FETCH_DATA = 6;
+
+
+export {
+  SAVE_DATA,
+  DELETE_DATA,
+  SEARCH_DATA,
+  DETAIL_DATA,
+  FETCH_DATA,
+  FETCH_COMPLETE,
+}
