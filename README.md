@@ -11,7 +11,7 @@ This is an example of how to list things you need to use the software and how to
 
 ## Configuration
  * create database db_employee
- * change your password and username for your connection database in folder BackEnd > modules > dbconnection.go
+ * change your password and username for your connection database in folder BackEnd > config > dbconnection.go
  
 ### Installation
 
@@ -27,5 +27,10 @@ This is an example of how to list things you need to use the software and how to
 1. goto folder FrontEnd 
 2. and then open terminal, then use command : 
    ```sh
+   npm install
+   ```
+3. and use command : 
+   ```sh
    npm start
    ```
+   for start admin panel
