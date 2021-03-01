@@ -32,11 +32,15 @@ func SaveDataUser(c *gin.Context)  {
 	c.BindJSON(&user)
 	res, err := services.InsertDataUser(user)
 	if err != nil {
+		susscessResponse := models.Response{Status: 500, Message: err.Error(), Data: nil}
+		c.JSON(500, susscessResponse)
 		return
+	}else {
+		susscessResponse := models.Response{Status: 200, Message: "Success", Data: res}
+		c.JSON(200, susscessResponse)
 	}
 
-	susscessResponse := models.Response{Status: 200, Message: "Success", Data: res}
-	c.JSON(200, susscessResponse)
+
 }
 
 func UpdateDataUser(c *gin.Context)  {
@@ -44,11 +48,13 @@ func UpdateDataUser(c *gin.Context)  {
 	c.BindJSON(&user)
 	res, err := services.UpdateDataUser(user)
 	if err != nil {
+		susscessResponse := models.Response{Status: 500, Message: "Update Failed", Data: nil}
+		c.JSON(500, susscessResponse)
 		return
+	}else {
+		susscessResponse := models.Response{Status: 200, Message: "Success", Data: res}
+		c.JSON(200, susscessResponse)
 	}
-
-	susscessResponse := models.Response{Status: 200, Message: "Success", Data: res}
-	c.JSON(200, susscessResponse)
 }
 
 func DeleteDataUser(c *gin.Context)  {
