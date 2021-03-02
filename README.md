@@ -34,5 +34,9 @@ This is an example of how to list things you need to use the software and how to
    ```sh
    npm start
    ```
-   for start admin panel. if you not automatically redirected to browser you can open your browser and goto the link : http://localhost:3000/
+   for start admin panel. if you not automatically redirected to browser you can open your browser and goto the link : http://localhost:3000/ .
+   for the Login admin panel you can use :
+   * username = admin
+   * password = admin
+   
    
