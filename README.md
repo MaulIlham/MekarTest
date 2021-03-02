@@ -10,8 +10,8 @@ This is an example of how to list things you need to use the software and how to
 * Text Editor
 
 ## Configuration
- * create database db_employee in Mysql
- * change your password and username for your connection database in folder BackEnd > config > dbconnection.go
+ * create database with name : db_employee in Mysql
+ * change DB_USER and DB_PASSWORD in folder BackEnd > config > dbconnection.go, to your user and password mysql
  
 ### Installation
 
