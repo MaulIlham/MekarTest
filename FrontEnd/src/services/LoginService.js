@@ -1,8 +1,8 @@
 import Axios from "axios"
 import { BaseUrl } from "../shared/BaseUrl"
 
-const signIn=async(user)=>{
-    const {data} =await Axios.post(BaseUrl+'/api/auth/signin',{username:user.userName, password:user.password})
+const signIn=async(account)=>{
+    const {data} =await Axios.post(BaseUrl+'/api/auth/signin',account)
     return data
 }
 

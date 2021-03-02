@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { UncontrolledDropdown,Nav, NavItem } from 'reactstrap';
+import { Badge, UncontrolledDropdown, DropdownItem, DropdownMenu, DropdownToggle, Nav, NavItem } from 'reactstrap';
 import PropTypes from 'prop-types';
 
 import { AppSidebarToggler } from '@coreui/react';
@@ -27,6 +27,12 @@ class DefaultHeader extends Component {
         </Nav>
         <Nav className="ml-auto" navbar>
           <UncontrolledDropdown nav direction="down">
+            <DropdownToggle nav>
+              <img src={'../../assets/img/avatars/userIcon.png'} className="img-avatar" alt="admin@bootstrapmaster.com" />
+            </DropdownToggle>
+            <DropdownMenu right>
+              <DropdownItem onClick={e => this.props.onLogout(e)}><i className="fa fa-lock"></i> Logout</DropdownItem>
+            </DropdownMenu>
           </UncontrolledDropdown>
         </Nav>
       </React.Fragment>

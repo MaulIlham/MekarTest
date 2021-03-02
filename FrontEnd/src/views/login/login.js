@@ -6,22 +6,19 @@ class Login extends Component {
     constructor(props){
       super(props)
       this.state={
-        userName:'',
-        password:'',
+        account: {
+          username: ``,
+          password: ``,
+        },
       }
     }
 
 
     login=()=>{
-        const { userName, password } = this.state
-        signIn({userName,password})
+        signIn(this.state.account)
         .then(data=>{
-          if(data.roles[0]==="ROLE_ADMIN"){
             localStorage.setItem('@token', data.token)
-            localStorage.setItem('@userData', data)
-            this.props.history.push('/dashboard')
-            console.log(data.token);
-          }
+            this.props.history.push('/user')
         })
         .catch(err=>{
           console.log(err);
@@ -29,8 +26,6 @@ class Login extends Component {
     }
 
   render() {
-    const { userName, password } = this.state
-
     return (
       <div className="app flex-row align-items-center">
         <Container>
@@ -50,9 +45,9 @@ class Login extends Component {
                             <i className="icon-user"></i>
                           </InputGroupText>
                         </InputGroupAddon>
-                        <Input type="text" value={userName}
+                        <Input type="text" value={this.state.account.username}
                           placeholder="Username" autoComplete="username"
-                          onChange={(e)=>this.setState( {...this.state, userName:e.target.value} )}
+                          onChange={(e)=>this.setState({ account: {...this.state.account, username: e.target.value}}) }
                         />
                       </InputGroup>
                       <InputGroup className="mb-4">
@@ -61,16 +56,13 @@ class Login extends Component {
                             <i className="icon-lock"></i>
                           </InputGroupText>
                         </InputGroupAddon>
-                        <Input type="password" value={password}
+                        <Input type="password" value={this.state.account.password}
                           placeholder="Password" autoComplete="current-password"
-                          onChange={(e)=>this.setState( {...this.state, password:e.target.value} )}
+                               onChange={(e)=>this.setState({ account: {...this.state.account, password: e.target.value}}) }
                         />
                       </InputGroup>
                         <Col className="text-center">
                           <Button color="primary" onClick={()=>this.login()} className="px-4">Login</Button>
-                        </Col>
-                        <Col className="text-center">
-                          <Button color="link" className="px-0">Forgot password?</Button>
                         </Col>
                     </Form>
                   </CardBody>
